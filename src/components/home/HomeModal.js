@@ -22,7 +22,7 @@ export const HomeModal = () => {
 
     return (
         <Modal
-            isOpen={true}
+            isOpen={false}
             onRequestClose={closeModal}
             closeTimeoutMS={200}
             style={customStyles}
