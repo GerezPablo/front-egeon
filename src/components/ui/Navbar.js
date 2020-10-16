@@ -9,9 +9,8 @@ export const Navbar = () => {
 
             <button className="btn btn-danger">
                 <i className="fas fa-sign-out-alt"/>
-                <span> Salir</span>
+                <span> Log out</span>
             </button>
-            
         </div>
     )
 }
