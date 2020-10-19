@@ -4,7 +4,7 @@ import { ImageGrid } from './ImageGrid';
 
 export const PixaBayApp = () => {
 
-    const [category, setCategory] = useState("casas");
+    const [category, setCategory] = useState("homes");
 
     return (
         <div>

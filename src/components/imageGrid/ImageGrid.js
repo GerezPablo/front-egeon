@@ -10,7 +10,7 @@ export const ImageGrid = ({category}) => {
         <div className="imageGrid">
             <h3>Results of {category}</h3>
 
-            { loading && <p className="animate__animated animate__flash">Loading</p> }
+            { loading && <p className="animate__animated animate__flash" id="loading">Loading...</p> }
 
             <div className="cardGrid"> 
                 { images.map( img => ( <ImageGridItem key = { img.id } { ...img } /> ) ) } 

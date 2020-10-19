@@ -13,9 +13,13 @@ body { background-color: #121212; }
   background-color:  #121212;
   align-self:center;
   max-width: 80vw;
-  margin-bottom: 5vh;
+  margin-bottom: 5%;
 } 
 
 .imageGrid h3 {
   color: #3366ff;
+}
+
+.logo-navbar {
+  max-width: 25vh;
 }
