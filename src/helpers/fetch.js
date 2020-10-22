@@ -1,20 +1,15 @@
-import {apiRequest} from './baseURL'
+const baseUrl = process.env.REACT_APP_API_URL;
 
-export const fetchWoToken = (endpoint, {email, password}, method) => {
+export const fetchWoToken = ( endpoint, data, method) => {
 
-  if ( method === 'GET' ) {
-    return apiRequest.get(endpoint)
-    .then(res => {
-      console.log(res);
-    });
-  } 
-  else {
-    return apiRequest.post(endpoint, {
-      email: email,
-      password: password
-    })
-    .then(response =>  {
-      console.log(response.data);
-    });
-  };
-};
+    const url = `${ baseUrl }/${ endpoint }`;
+
+    if ( method === 'GET' ) { return fetch( url ); }
+    else {
+        return fetch( url, {
+          method,
+          headers: { 'Content-type': 'application/json' },
+          body: JSON.stringify( data )
+        });
+    }
+}

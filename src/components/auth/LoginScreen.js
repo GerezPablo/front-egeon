@@ -1,17 +1,17 @@
 import React from 'react';
 import './login.css';
 import pixabayLogo from '../ui/pixabay-logo.png'; 
+import { useDispatch } from 'react-redux'; 
 import { useForm } from '../../hooks/useForm';
 import { startLogin } from '../../actions/auth';
-import { useDispatch } from 'react-redux';
 
 export const LoginScreen = () => {
 
     const dispatch = useDispatch()
 
     const [formLoginValues, handleLoginInputChange]  = useForm({
-        loginEmail: 'pablo@gmail.com',
-        loginPassword: '1234567'
+        loginEmail: '',
+        loginPassword: ''
     });
     
     const {loginEmail, loginPassword} = formLoginValues;
@@ -21,8 +21,6 @@ export const LoginScreen = () => {
 
         dispatch(startLogin(loginEmail, loginPassword));
     }
-    
-
 
     return (
         <>
@@ -30,7 +28,7 @@ export const LoginScreen = () => {
         <div className="container login-container">
             <div className="row">
                 <div className="col-md-6 login-form-1">
-                    <h3>Login </h3>
+                    <h3>Login </h3>  
                     <form onSubmit={handleLogin}>
                         <div className="form-group">
                             <input 

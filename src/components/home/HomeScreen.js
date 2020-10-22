@@ -1,6 +1,5 @@
 import React from 'react'
 import { Navbar } from '../ui/Navbar'
-import { HomeModal } from './HomeModal'
 import { PixaBayApp } from '../imageGrid/PixaBayApp'
 
 export const  HomeScreen = () => {
@@ -9,7 +8,6 @@ export const  HomeScreen = () => {
         <>
             <Navbar />
             <PixaBayApp />
-            <HomeModal />
         </>
     )
 }
