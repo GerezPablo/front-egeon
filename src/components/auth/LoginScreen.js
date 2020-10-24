@@ -1,18 +1,20 @@
 import React from 'react';
-import './login.css';
-import pixabayLogo from '../ui/pixabay-logo.png'; 
 import { useDispatch } from 'react-redux'; 
 import { useForm } from '../../hooks/useForm';
 import { startLogin , startRegister} from '../../actions/auth';
 import Swal from 'sweetalert2';
+
+import './login.css';     
+import pixabayLogo from '../ui/pixabay-logo.png'; 
+
 
 export const LoginScreen = () => {
     const dispatch = useDispatch()
 
     //Login 
     const [formLoginValues, handleLoginInputChange]  = useForm({
-        loginEmail: 'pablo@gmail.com',
-        loginPassword: 'jektor123'
+        loginEmail: '',
+        loginPassword: ''
     });
 
     const {loginEmail, loginPassword} = formLoginValues;
