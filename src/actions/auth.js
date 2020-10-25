@@ -3,30 +3,29 @@ import {types} from '../types/types'
 import Swal from 'sweetalert2';
 
 export const startLogin = ( email, password ) => {
-    
+
     return async(dispatch) => {
 
         const res = await fetchWoToken( 'auth', { email, password }, 'POST' );
-        const {username, uid, token, msg, status, errors} = await res.json();
+        const body = await res.json();
+        const {errors} = body;
 
-        if(status === 400) {
+        if(res.status === 400) {
             if(errors !== undefined) {
-
                 //Show validations for email input
-                if (errors.email !== undefined) {  return Swal.fire('Something gone wrong', errors.email.msg, 'error'); }
+                if (errors.email !== undefined) {  return Swal.fire('Something gone wrong', errors.email.msg, 'error')};
                 
                 //Show validations for password input
-                if(errors.password !== undefined) { return Swal.fire('Something gone wrong', errors.password.msg, 'error');}
+                if(errors.password !== undefined) { return Swal.fire('Something gone wrong', errors.password.msg, 'error')};
 
-            } else { Swal.fire('Something gone wrong', msg, 'error')}
+            } else { Swal.fire('Something gone wrong', body.msg, 'error')}
 
         } else {
             Swal.fire({ icon: 'success', text: 'Logged in',showConfirmButton: false, timer:1000})
-            localStorage.setItem('token', token);
+            localStorage.setItem('token', body.token);
             localStorage.setItem('token-imit-date', new Date().getTime());
-            dispatch( 
-                login( { username: username, uid: uid })
-            );
+            
+            dispatch( login( { username: body.username, uid: body.uid }) );
         }
     }
 }
@@ -37,10 +36,11 @@ export const startRegister = ( uname, email, password ) => {
     return async(dispatch) => {
 
         const res = await fetchWoToken( 'auth/register', { uname, email, password }, 'POST' );
-        const {username, uid, token, msg, status, errors} = await res.json();
+        const body = await res.json();
+        const {errors} = body;
         
 
-        if(status === 400) {
+        if(res.status === 400) {
             if(errors !== undefined) {
 
                 //Show validations for username input
@@ -52,13 +52,13 @@ export const startRegister = ( uname, email, password ) => {
                 //Show validations for password input
                 if(errors.password !== undefined) { return Swal.fire('Something gone wrong', errors.password.msg, 'error');}
 
-            } else { Swal.fire('Something gone wrong', msg, 'error')}
+            } else { Swal.fire('Something gone wrong', body.msg, 'error')}
 
         } else {
-            localStorage.setItem('token', token)
+            localStorage.setItem('token', body.token)
             localStorage.setItem('token-imit-date', new Date().getTime())
             dispatch( 
-                login( { username: username, uid: uid }) 
+                login( { username: body.username, uid: body.uid }) 
             );
         }
     }
