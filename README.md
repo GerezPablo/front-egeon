@@ -1,2 +1,2 @@
 # Description
-Frontend devolpment for [PixabayWeb](https://github.com/GerezPablo/PixabayWeb.git).
+Frontend devolpment for [PixabayWeb](https://github.com/GerezPablo/pixabay-web.git).
