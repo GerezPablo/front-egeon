@@ -31,14 +31,13 @@ export const startLogin = ( email, password ) => {
 }
 
 
-export const startRegister = ( uname, email, password ) => {
+export const startRegister = ( username, email, password ) => {
     
     return async(dispatch) => {
 
-        const res = await fetchWoToken( 'auth/register', { uname, email, password }, 'POST' );
+        const res = await fetchWoToken( 'auth/register', { username, email, password }, 'POST' );
         const body = await res.json();
         const {errors} = body;
-        
 
         if(res.status === 400) {
             if(errors !== undefined) {

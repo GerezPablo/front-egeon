@@ -9,8 +9,7 @@ export const fetchWoToken = ( endpoint, data, method) => {
       return fetch( url, {
         method,
         headers: { 
-          'Content-type': 'application/json',
-          'Accept': 'application/json'
+          'Content-type': 'application/json'
         },
         body: JSON.stringify( data )
       });
@@ -28,7 +27,6 @@ export const fetchWToken = ( endpoint, data, method = 'GET') => {
       method,
       headers: { 
         'Content-type': 'application/json',
-        'Accept': 'application/json',
         'x-token': token 
       },
       body: JSON.stringify( data )
