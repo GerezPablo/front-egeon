@@ -28,8 +28,19 @@ export const fetchWToken = ( endpoint, data, method = 'GET') => {
       headers: { 
         'Content-type': 'application/json',
         'x-token': token 
-      },
-      body: JSON.stringify( data )
+      }, body: JSON.stringify( data )
     });
   }
+}
+
+export const fetchImages = async( data ) => {
+
+  const url = `${ baseUrl}/img?topic=${data}`;
+  const res = await fetch(url);
+
+  const laWea = res.json()
+    .then (res => res.results);
+  
+  console.log('laWea', laWea);
+  return laWea;
 }

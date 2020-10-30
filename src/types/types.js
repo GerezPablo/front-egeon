@@ -6,5 +6,8 @@ export const types = {
     authLogin: '[auth] Login', 
     authRegister: '[auth] Start Register',
     authTokenRenew: '[auth] Token renew',
-    authLogout: '[auth] Logout'
+    authLogout: '[auth] Logout',
+
+    //Img types
+    imgSearch: '[img] Search'
 }

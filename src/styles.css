@@ -1,6 +1,8 @@
-* { font-family: Helvetica, Arial, sans-serif; }
 body { background-color: #121212; }
 
+.navbar h3 {
+  color: aliceblue;
+}
 .input {
     font-size: 1.2rem;
     color: whitesmoke;
