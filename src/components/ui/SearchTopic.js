@@ -19,13 +19,16 @@ export const SearchTopic = ({ setTopic }) => {
     }
 
     return (
-        <form onSubmit={ handleSubmit }>
-            <input 
-                type="text"
-                value={ inputValue }
-                onChange={ handleInputChange }
-            />
-        </form>
+        <div className="md-form active-purple mb-5">
+            <form onSubmit={ handleSubmit }>
+                <input 
+                    type="text"
+                    value={ inputValue }
+                    onChange={ handleInputChange }
+                    placeholder="Search GIPHY"
+                />
+            </form>
+        </div>
     )
 }
 

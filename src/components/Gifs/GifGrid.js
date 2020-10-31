@@ -7,15 +7,15 @@ export const GifGrid = ({ topic }) => {
     const {data: gifs, loading} = useFetchedGifs(topic);
 
     return (
-        <div className="imageGrid">
+        <div className='text-primary'>
             <h3>Results of: {topic}</h3>
 
-            { loading && <p className="animate__animated animate__flash" id="loading">Loading...</p> }
-
+            { loading && <p className="spinner-border text-danger" style={{'width':'30px'}}> </p> }    
         
             <div className="cardGrid"> 
                 { gifs.map( gif => ( <GifGridItem key = { gif.id } { ...gif } /> ) ) } 
             </div>
+            
         </div>
     )
 }
