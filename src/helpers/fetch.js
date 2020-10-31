@@ -38,9 +38,5 @@ export const fetchImages = async( data ) => {
   const url = `${ baseUrl}/img?topic=${data}`;
   const res = await fetch(url);
 
-  const laWea = res.json()
-    .then (res => res.results);
-  
-  console.log('laWea', laWea);
-  return laWea;
+  return res.json().then (res => res.results);
 }

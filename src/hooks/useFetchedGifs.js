@@ -2,18 +2,16 @@ import { useState, useEffect } from 'react'
 import { fetchImages } from '../helpers/fetch';
 
 
-export const useFetchGifs = async( topic ) => {
+export const useFetchedGifs = ( topic ) => {
     
     const [state, setState] = useState({
         data: [],
         loading: true
     });
 
-    useEffect( () => {
+    useEffect ( () => {
         fetchImages(topic)
         .then( gifs => {
-            console.log('gifs', gifs);
-            
             setState({
                 data: gifs,
                 loading: false
