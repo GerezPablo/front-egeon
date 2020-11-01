@@ -1,21 +1,18 @@
 import React, {useState} from 'react';
 import { Navbar } from '../ui/Navbar';
-import { SearchTopic } from '../ui/SearchTopic';
+import { SearchBar } from '../ui/SearchBar';
 import { GifGrid } from '../Gifs/GifGrid';
 import { Footer } from '../ui/Footer';
 
 export const  HomeScreen = () => {
-    const [topic, setTopic] = useState('random');
+    const [topic, setTopic] = useState('dragon ball');
     return (
-        <>
+        <div>
             <Navbar />
-            <SearchTopic setTopic={ setTopic } />
-            <GifGrid 
-                    key={ topic }
-                    topic={ topic }
-                />
-                <Footer />
-        </>
+            <SearchBar setTopic={ setTopic } />
+            <GifGrid key={ topic } topic={ topic } />
+            <Footer />
+        </div>
     )
 }
 

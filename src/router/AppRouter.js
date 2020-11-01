@@ -33,10 +33,10 @@ export const AppRouter = () => {
                     exact 
                     path="/login" 
                     component={LoginScreen}
-                     isAuthenticated={ !!uid} 
+                     isAuthenticated={!!uid} 
                 />
-                    <PrivateRoute exact path="/" component={HomeScreen} isAuthenticated={ !!uid} />
-                    <Redirect to= "/" />    
+                    <PrivateRoute exact path="/home" component={HomeScreen} isAuthenticated={!!uid} />
+                    <Redirect to= "/home" />    
                 </Switch>
             </div>
         </Router>    

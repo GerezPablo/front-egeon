@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 
-export const SearchTopic = ({ setTopic }) => {
+export const SearchBar = ({ setTopic }) => {
 
     const [inputValue, setInputValue] = useState('');
 
@@ -19,20 +19,21 @@ export const SearchTopic = ({ setTopic }) => {
     }
 
     return (
-        <div className="md-form active-purple mb-5">
-            <form onSubmit={ handleSubmit }>
+        <form onSubmit={ handleSubmit }>
+            <div class="md-form active-purple mb-5" style={{'width':'30vw', 'marginLeft':'1vw'}}>
                 <input 
-                    type="text"
-                    value={ inputValue }
-                    onChange={ handleInputChange }
-                    placeholder="Search GIPHY"
-                />
-            </form>
-        </div>
+                class="form-control" 
+                type="text" 
+                value={ inputValue }
+                onChange={ handleInputChange }
+                placeholder="Search GIPHY" 
+                aria-label="Search" />
+            </div>
+        </form>
     )
 }
 
 
-SearchTopic.propTypes = {
+SearchBar.propTypes = {
     setTopic: PropTypes.func.isRequired
 }

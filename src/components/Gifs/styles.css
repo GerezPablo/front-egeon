@@ -1,0 +1,37 @@
+.flexbox{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+
+/* .img {
+  border: 3px groove #022CD6;
+  border-radius: 6px;
+  background-color:  #121212;
+  align-self:center;
+  max-width: 80vw;
+}  */
+
+h3 {
+    color: #022CD6;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #fdfdf8;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0273F7;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #022CD6;
+}

@@ -1,21 +1,27 @@
 import React from 'react';
 import { GifGridItem } from './GifGridItem';
 import { useFetchedGifs } from '../../hooks/useFetchedGifs';
+import './styles.css';
 
 export const GifGrid = ({ topic }) => {
 
     const {data: gifs, loading} = useFetchedGifs(topic);
 
     return (
-        <div className='text-primary'>
-            <h3>Results of: {topic}</h3>
+        <>
+            <h3 style={{'marginLeft':'1vw', 'marginBottom':'5vh'}}>Results of: {topic}</h3>
+            
+            {
+                loading && 
+                <div style={{display: 'flex', 'justify-content':'center'}}> 
+                    <div className="spinner-border text-primary " style={{"width": "8rem", "height": "8rem"}} role="status"/>
+                </div>
+            }
 
-            { loading && <p className="spinner-border text-danger" style={{'width':'30px'}}> </p> }    
-        
-            <div className="cardGrid"> 
+            {/* GifGrid */}
+            <div className='text-primary flexbox'>
                 { gifs.map( gif => ( <GifGridItem key = { gif.id } { ...gif } /> ) ) } 
             </div>
-            
-        </div>
+        </>
     )
 }

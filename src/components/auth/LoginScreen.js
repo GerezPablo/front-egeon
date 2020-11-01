@@ -56,6 +56,7 @@ export const LoginScreen = () => {
                                     name="loginEmail"
                                     value={loginEmail}
                                     onChange={handleLoginInputChange} 
+                                    autoComplete='off'  
                                 />
                             </div>
                             <div className="form-group">
@@ -89,6 +90,7 @@ export const LoginScreen = () => {
                                     name="registerUsername"
                                     value={registerUsername}
                                     onChange={handleRegisterInputChange} 
+                                    autoComplete='off'
                                 />
                             </div>
                             <div className="form-group">
@@ -99,6 +101,7 @@ export const LoginScreen = () => {
                                     name="registerEmail"
                                     value={registerEmail}
                                     onChange={handleRegisterInputChange} 
+                                    autoComplete='off'
                                 />
                             </div>
                             <div className="form-group">

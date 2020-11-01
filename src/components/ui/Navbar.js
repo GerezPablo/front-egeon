@@ -1,7 +1,7 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import {startLogout} from '../../actions/auth';
-
+import { Link } from 'react-router-dom';
 export const Navbar = () => {
     const dispatch = useDispatch();
 
@@ -10,28 +10,25 @@ export const Navbar = () => {
     const handleLogOut = () => { dispatch (startLogout() ) };
 
     return (
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
-        <a class="navbar-brand">{username}</a>
+        <nav className="navbar navbar-expand-lg navbar-dark indigo mb-4" style={{'background-color':'#0273F7'}}>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
+        <a className="navbar-brand" style={{'color':'white'}}>{username}</a>
+
+        <div className="collapse navbar-collapse" >
+            <ul className="navbar-nav mr-auto">
+                <li className="nav-item active">
+                    <Link to="/home" className="nav-link" style={{'color':'white'}}>Home</Link>
                 </li>
 
-                <li class="nav-item active">
-                    <a class="nav-link" href="favs">Favorites
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <a class="d-inline-flex p-2" style={{'aligncontent':'center'}}>Egeon</a>
+                <li className="nav-item active">
+                    <Link to="/home" className="nav-link" style={{'color':'white'}}>Favorites</Link>
+                </li> 
+
             </ul>
 
-            <ul class="navbar-nav ml-auto nav-flex-icons">
-            <li class="nav-item">
-                <a class="waves-effect waves-light">
+            <ul className="navbar-nav ml-auto nav-flex-icons">
+            <li className="nav-item">
+                <a className="waves-effect waves-light">
                     <button className="btn btn-unique" onClick={handleLogOut}>
                         <span>Log out​​​​  </span>
                         <i className="fas fa-sign-out-alt"/>
