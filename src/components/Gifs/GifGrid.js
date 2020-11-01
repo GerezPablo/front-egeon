@@ -1,7 +1,6 @@
 import React from 'react';
 import { GifGridItem } from './GifGridItem';
 import { useFetchedGifs } from '../../hooks/useFetchedGifs';
-import './styles.css';
 
 export const GifGrid = ({ topic }) => {
 
@@ -9,16 +8,17 @@ export const GifGrid = ({ topic }) => {
 
     return (
         <>
-            <h3 style={{'marginLeft':'1vw', 'marginBottom':'5vh'}}>Results of: {topic}</h3>
+            <h3 style={{'marginLeft':'1vw', 'marginBottom':'5vh',  'color': '#022CD6' }}>Results of: {topic}</h3>
+            
             
             {
                 loading && 
-                <div style={{display: 'flex', 'justify-content':'center'}}> 
-                    <div className="spinner-border text-primary " style={{"width": "8rem", "height": "8rem"}} role="status"/>
+                <div classname="purple lighten-1" style={{display: 'flex', 'justify-content':'center'}}> 
+                    <div className="spinner-border text-primary " style={{"width": "6rem", "height": "6rem"}} role="status"/>
                 </div>
             }
 
-            {/* GifGrid */}
+
             <div className='text-primary flexbox'>
                 { gifs.map( gif => ( <GifGridItem key = { gif.id } { ...gif } /> ) ) } 
             </div>

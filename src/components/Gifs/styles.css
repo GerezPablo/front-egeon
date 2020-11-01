@@ -5,19 +5,6 @@
     align-items: flex-start;
 }
 
-
-/* .img {
-  border: 3px groove #022CD6;
-  border-radius: 6px;
-  background-color:  #121212;
-  align-self:center;
-  max-width: 80vw;
-}  */
-
-h3 {
-    color: #022CD6;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
 }

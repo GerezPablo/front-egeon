@@ -5,7 +5,7 @@ import './styles.css';
 export const GifGridItem = ({ title, url }) => {
 
     return (
-        <div className="card animate__animated animate__fadeIn img" 
+        <div className="card animate__animated animate__fadeIn" 
         style={ {'width': '18rem','marginBottom':'4%', 'align':'center'} } id={title}>
             <img src={url} className="card-img-top" alt={title} />
                 <div className="card-body">

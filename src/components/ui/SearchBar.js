@@ -13,16 +13,17 @@ export const SearchBar = ({ setTopic }) => {
         e.preventDefault();
 
         if ( inputValue.trim().length > 0 ) {
-            setTopic(inputValue);
+            const finalInput = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+            setTopic(finalInput);
             setInputValue('');
         }
     }
 
     return (
         <form onSubmit={ handleSubmit }>
-            <div class="md-form active-purple mb-5" style={{'width':'30vw', 'marginLeft':'1vw'}}>
+            <div className="md-form active-purple mb-5" style={{'width':'30vw', 'marginLeft':'1vw'}}>
                 <input 
-                class="form-control" 
+                className="form-control" 
                 type="text" 
                 value={ inputValue }
                 onChange={ handleInputChange }

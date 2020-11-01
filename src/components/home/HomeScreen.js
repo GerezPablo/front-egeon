@@ -5,11 +5,11 @@ import { GifGrid } from '../Gifs/GifGrid';
 import { Footer } from '../ui/Footer';
 
 export const  HomeScreen = () => {
-    const [topic, setTopic] = useState('dragon ball');
+    const [topic, setTopic] = useState('Broly');
     return (
         <div>
             <Navbar />
-            <SearchBar setTopic={ setTopic } />
+            <SearchBar   setTopic={ setTopic } />
             <GifGrid key={ topic } topic={ topic } />
             <Footer />
         </div>
