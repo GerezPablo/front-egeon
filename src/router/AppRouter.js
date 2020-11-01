@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import {
     BrowserRouter as Router,
     Switch,
-    Redirect
+    Redirect,
+    Route
 } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +15,7 @@ import { startChecking } from "../actions/auth";
 
 import LoginScreen from "../components/auth/LoginScreen";
 import HomeScreen from "../components/home/HomeScreen";
+import FavsScreen from "../components/home/FavsScreen";
 
 export const AppRouter = () => {
 
@@ -36,7 +38,8 @@ export const AppRouter = () => {
                      isAuthenticated={!!uid} 
                 />
                     <PrivateRoute exact path="/home" component={HomeScreen} isAuthenticated={!!uid} />
-                    <Redirect to= "/home" />    
+                    <Route exact path="/favorites" component={FavsScreen} isAuthenticated={!!uid} />    
+                    <Redirect to= "/home"/>
                 </Switch>
             </div>
         </Router>    

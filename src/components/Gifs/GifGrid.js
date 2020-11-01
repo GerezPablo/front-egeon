@@ -13,7 +13,7 @@ export const GifGrid = ({ topic }) => {
             
             {
                 loading && 
-                <div classname="purple lighten-1" style={{display: 'flex', 'justify-content':'center'}}> 
+                <div className="purple-lighten-1" style={{display: 'flex', 'justifyContent':'center'}}> 
                     <div className="spinner-border text-primary " style={{"width": "6rem", "height": "6rem"}} role="status"/>
                 </div>
             }

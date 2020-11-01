@@ -1,7 +1,7 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import {startLogout} from '../../actions/auth';
-import { Link } from 'react-router-dom';
+ import { NavLink, Link } from 'react-router-dom';
 
 
 export const Navbar = () => {
@@ -23,11 +23,15 @@ export const Navbar = () => {
                 <ul className="navbar-nav mr-auto">
                     
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Home</a>
+                        <a className="nav-link">
+                            <NavLink  className="nav-link" to="/home">Home</NavLink>
+                        </a> 
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" href="/favs">Favorites</a>
+                        <a className="nav-link">
+                            <NavLink  className="nav-link" to="/favorites">Favorites</NavLink>
+                        </a> 
                     </li>
                 </ul>
 
