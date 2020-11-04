@@ -23,10 +23,26 @@ export const LoginScreen = () => {
 
     return (
         <>
-            <nav class="navbar navbar-dark primary-color">
-                <a class="navbar-brand" href="#">
-                    <img src="./imagotype.png" height="30" alt="mdb logo" />
+            <nav className="mb-1 navbar navbar-expand-lg purple navbar-dark darken-4">
+                <a class="navbar-brand">
+                    <img src="https://github.com/GerezPablo/front-egeon/blob/main/public/favicon.png" width="30" height="30" alt="" />
+                     Egeon
                 </a>
+
+                {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon" />
+                </button>
+                
+                <div className="collapse navbar-collapse" id="navbarSupportedContent-333">
+                    <ul className="navbar-nav ml-auto nav-flex-icons">
+                        <li className="nav-item">
+                            <a className="nav-link">
+                                <NavLink  className="nav-link" to="/register">Sign up</NavLink>
+                            </a> 
+                        </li>
+                    </ul>
+                </div> */}
             </nav>
 
             <div className="container login-container">

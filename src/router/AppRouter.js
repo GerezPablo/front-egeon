@@ -14,6 +14,7 @@ import{PublicRoute} from './PublicRoute';
 import { startChecking } from "../actions/auth";
 
 import LoginScreen from "../components/auth/LoginScreen";
+import RegisterScreen from "../components/auth/RegisterScreen";
 import HomeScreen from "../components/home/HomeScreen";
 import FavsScreen from "../components/home/FavsScreen";
 
@@ -31,15 +32,15 @@ export const AppRouter = () => {
         <Router>
             <div>
                 <Switch>
-                    <PublicRoute 
-                    exact 
-                    path="/login" 
-                    component={LoginScreen}
-                     isAuthenticated={!!uid} 
-                />
+                    <PublicRoute exact path="/login" component={LoginScreen} isAuthenticated={!!uid} />
+                    
+                    <Route exact path="/register" component={RegisterScreen} isAuthenticated={!!uid} />    
+                
                     <PrivateRoute exact path="/home" component={HomeScreen} isAuthenticated={!!uid} />
+                    
                     <Route exact path="/favorites" component={FavsScreen} isAuthenticated={!!uid} />    
-                    <Redirect to= "/home"/>
+                    
+                    <Redirect to= "/home" />
                 </Switch>
             </div>
         </Router>    
