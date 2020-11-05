@@ -40,3 +40,12 @@ export const fetchImages = async( data ) => {
 
   return res.json().then (res => res.results);
 }
+
+
+export const fetchTrendingTopic = async( ) => {
+
+  const url = `${ baseUrl}/img/favs`;
+  const res = await fetch(url);
+
+  return res.json().then (res => res.results);
+}

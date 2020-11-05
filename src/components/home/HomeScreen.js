@@ -6,6 +6,7 @@ import { Footer } from '../ui/Footer';
 
 export const  HomeScreen = () => {
     const [topic, setTopic] = useState('Broly');
+    
     return (
         <>
             <Navbar />

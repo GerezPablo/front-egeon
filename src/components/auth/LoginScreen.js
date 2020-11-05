@@ -7,7 +7,6 @@ import './login.css';
 
 
 import imagotype from '../../img/imagotype.png';
-import { Footer } from '../ui/Footer';
 
 export const LoginScreen = () => {
     const dispatch = useDispatch();
@@ -38,9 +37,7 @@ export const LoginScreen = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent-333">
                     <ul className="navbar-nav ml-auto nav-flex-icons">
                         <li className="nav-item">
-                            <a className="nav-link">
-                                <NavLink  className="nav-link" to="/register">Sign up</NavLink>
-                            </a> 
+                            <NavLink  className="nav-link" to="/register">Sign up</NavLink>
                         </li>
                     </ul>
                 </div>

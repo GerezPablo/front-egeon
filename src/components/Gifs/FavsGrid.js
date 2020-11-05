@@ -1,14 +1,14 @@
 import React from 'react';
 import { GifGridItem } from './GifGridItem';
-import { useFetchedGifs } from '../../hooks/useFetchedGifs';
+import { useFavsGifs } from '../../hooks/useFetchedGifs';
 
-export const GifGrid = ({ topic }) => {
+export const FavsGrid = () => {
 
-    const {data: gifs, loading} = useFetchedGifs(topic);
+    const {data: gifs, loading} = useFavsGifs();
 
     return (
         <>
-            <h3 style={{'marginLeft':'1vw', 'marginBottom':'5vh',  'color': '#022CD6' }}>Results of: {topic}</h3>
+            <h3 style={{'marginLeft':'1vw', 'marginBottom':'5vh',  'color': '#022CD6' }}>The most searched</h3>
             
             
             {

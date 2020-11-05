@@ -32,13 +32,13 @@ export const AppRouter = () => {
         <Router>
             <div>
                 <Switch>
+                    {/* Public routes where you can acces without an account */}
                     <PublicRoute exact path="/login" component={LoginScreen} isAuthenticated={!!uid} />
-                    
-                    <Route exact path="/register" component={RegisterScreen} isAuthenticated={!!uid} />    
+                    <PublicRoute exact path="/register" component={RegisterScreen} isAuthenticated={!!uid} />
                 
+                    {/* Private routes you need an acount */}
                     <PrivateRoute exact path="/home" component={HomeScreen} isAuthenticated={!!uid} />
-                    
-                    <Route exact path="/favorites" component={FavsScreen} isAuthenticated={!!uid} />    
+                    <PrivateRoute exact path="/favorites" component={FavsScreen} isAuthenticated={!!uid} />
                     
                     <Redirect to= "/home" />
                 </Switch>

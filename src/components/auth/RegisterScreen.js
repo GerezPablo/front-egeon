@@ -46,9 +46,7 @@ export const RegisterScreen = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent-333">
                     <ul className="navbar-nav ml-auto nav-flex-icons">
                         <li className="nav-item">
-                            <a className="nav-link">
-                                <NavLink  className="nav-link" to="/login">Sign In</NavLink>
-                            </a> 
+                            <NavLink  className="nav-link" to="/login">Sign In</NavLink>
                         </li>
                     </ul>
                 </div>
