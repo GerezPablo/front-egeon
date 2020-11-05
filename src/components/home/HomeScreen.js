@@ -7,12 +7,12 @@ import { Footer } from '../ui/Footer';
 export const  HomeScreen = () => {
     const [topic, setTopic] = useState('Broly');
     return (
-        <div>
+        <>
             <Navbar />
             <SearchBar   setTopic={ setTopic } />
             <GifGrid key={ topic } topic={ topic } />
             <Footer />
-        </div>
+        </>
     )
 }
 

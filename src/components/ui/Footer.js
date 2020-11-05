@@ -4,7 +4,7 @@ export const Footer = () => {
     return (
         <>
             <hr />
-            <footer className="page-footer font-small pt-4">  
+            <footer className="page-footer indigo font-small pt-4">  
                 <div className="container-fluid text-center text-md-left"> 
                     <div className="row"> 
                         <div className="col-md-4 mt-md-0 mt-3"> 

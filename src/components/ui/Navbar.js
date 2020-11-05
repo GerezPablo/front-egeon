@@ -1,7 +1,9 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import {startLogout} from '../../actions/auth';
- import { NavLink} from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
+import isotype from '../../img/isotype.png'
+import logotype from '../../img/logo.png'
 
 
 export const Navbar = () => {
@@ -12,8 +14,8 @@ export const Navbar = () => {
     const handleLogOut = () => { dispatch (startLogout() ) };
 
     return (
-        <nav className="mb-1 navbar navbar-expand-lg purple navbar-dark darken-4">
-            <a className="navbar-brand" href="#">Egeon</a>
+        <nav className="mb-1 navbar navbar-expand-lg grey navbar-dark darken-4">
+            <a className="navbar-brand"> <img src={isotype} style={{width:'5vh'}} /> </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
                 aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -22,7 +24,7 @@ export const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul className="navbar-nav mr-auto">
                     
-                    <li className="nav-item active">
+                    <li className="nav-item">
                         <a className="nav-link">
                             <NavLink  className="nav-link" to="/home">Home</NavLink>
                         </a> 

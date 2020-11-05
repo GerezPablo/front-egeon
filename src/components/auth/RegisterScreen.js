@@ -6,6 +6,7 @@ import { NavLink} from 'react-router-dom';
 import './login.css';
 import Swal from 'sweetalert2';
 
+import isotype from '../../img/isotype.png';
 
 export const RegisterScreen = () => {
     const dispatch = useDispatch();
@@ -21,7 +22,10 @@ export const RegisterScreen = () => {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        if(registerPassword !==  registerPassword2) { return Swal.fire("Something gone wrong", "The passwords must be the same", "error");}
+        if(registerPassword !==  registerPassword2) { 
+            return Swal.fire("Something gone wrong", "The passwords must be the same", "error");
+        }
+        
         dispatch(startRegister(registerUsername, registerEmail, registerPassword));
     }
 
@@ -31,7 +35,7 @@ export const RegisterScreen = () => {
         <>
             <nav className="mb-1 navbar navbar-expand-lg purple navbar-dark darken-4">
                 <a className="navbar-brand" >
-                    <img src='../ui/Imagotype.png' alt=''/>
+                    <img src={isotype} style={{width:'5vh'}}/>
                 </a>
 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"

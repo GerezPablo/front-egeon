@@ -5,6 +5,10 @@ import { startLogin} from '../../actions/auth';
 import { NavLink} from 'react-router-dom';
 import './login.css';
 
+
+import imagotype from '../../img/imagotype.png';
+import { Footer } from '../ui/Footer';
+
 export const LoginScreen = () => {
     const dispatch = useDispatch();
 
@@ -23,13 +27,27 @@ export const LoginScreen = () => {
 
     return (
         <>
-            <nav class="navbar navbar-dark primary-color">
-                <a class="navbar-brand" href="#">
-                    <img src="./imagotype.png" height="30" alt="mdb logo" />
-                </a>
+            <nav className="mb-1 navbar navbar-expand-lg purple navbar-dark darken-4">
+                <a className="navbar-brand"/>
+
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon" />
+                </button>
+                
+                <div className="collapse navbar-collapse" id="navbarSupportedContent-333">
+                    <ul className="navbar-nav ml-auto nav-flex-icons">
+                        <li className="nav-item">
+                            <a className="nav-link">
+                                <NavLink  className="nav-link" to="/register">Sign up</NavLink>
+                            </a> 
+                        </li>
+                    </ul>
+                </div>
             </nav>
 
             <div className="container login-container">
+                <img src={imagotype} style={{width:'40vh',display:"block", marginLeft:"auto", marginRight:"auto"}}/>
                 <div className="login-form">
                     <h3>Login </h3>  
                     <form onSubmit={handleLogin}>
@@ -40,8 +58,7 @@ export const LoginScreen = () => {
                                 placeholder="Email"
                                 name="loginEmail"
                                 value={loginEmail}
-                                onChange={handleLoginInputChange} 
-                                autoComplete='off'  
+                                onChange={handleLoginInputChange}
                             />
                         </div>
                         <div className="form-group">
