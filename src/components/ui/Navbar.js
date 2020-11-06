@@ -3,7 +3,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {startLogout} from '../../actions/auth';
 import { NavLink} from 'react-router-dom';
 import isotype from '../../img/isotype.png'
-import logotype from '../../img/logo.png'
 
 
 export const Navbar = () => {
@@ -15,7 +14,9 @@ export const Navbar = () => {
 
     return (
         <nav className="mb-1 navbar navbar-expand-lg grey navbar-dark darken-4">
-            <a className="navbar-brand"> <img src={isotype} style={{width:'5vh'}} /> </a>
+
+            <a className="navbar-brand" href="!#"> <img src={isotype} style={{width:'5vh'}} alt="nav-bar brand"/> </a>
+
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
                 aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -24,40 +25,37 @@ export const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul className="navbar-nav mr-auto">
                     
-                    <li className="nav-item">
-                        <a className="nav-link">
-                            <NavLink  className="nav-link" to="/home">Home</NavLink>
-                        </a> 
+                    <li className="nav-item" href="!#">
+                        <NavLink  className="nav-link" to="/home">Home</NavLink>
+                        
                     </li>
 
-                    <li className="nav-item">
-                        <a className="nav-link">
-                            <NavLink  className="nav-link" to="/favorites">Favorites</NavLink>
-                        </a> 
+                    <li className="nav-item" href="!#">
+                        <NavLink  className="nav-link" to="/favorites">Favorites</NavLink>
                     </li>
                 </ul>
 
                 <ul className="navbar-nav ml-auto nav-flex-icons">
 
-                    <li className="nav-item">
+                    <li className="nav-item" href="!#">
                         <a className="nav-link waves-effect waves-light" href="https://twitter.com/P4BL1SK1">
                         <i className="fab fa-twitter"></i>
                         </a>
                     </li>
                     
-                    <li className="nav-item">
+                    <li className="nav-item" href="!#">
                         <a className="nav-link waves-effect waves-light" href="https://github.com/GerezPablo">
                         <i className="fab fa-github"></i>
                         </a>
                     </li>
                     
-                    <li className="nav-item dropdown">
+                    <li className="nav-item dropdown" >
                         <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false"> {username} </a>
+                            href="!#" aria-expanded="false" > {username} </a>
 
                         <div className="dropdown-menu dropdown-menu-right dropdown-default"
                             aria-labelledby="navbarDropdownMenuLink-333">
-                            <a className="dropdown-item" onClick={handleLogOut}>Log out</a>
+                            <a className="dropdown-item" onClick={handleLogOut} href="!#">Log out</a>
                         </div>
                     </li>
                 </ul>

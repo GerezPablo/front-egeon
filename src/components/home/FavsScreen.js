@@ -1,22 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Navbar } from '../ui/Navbar';
+import { GifGrid } from '../Gifs/GifGrid';
 import { Footer } from '../ui/Footer';
-import { FavsGrid } from '../Gifs/FavsGrid';
-import { useFavsGifs } from '../../hooks/useFetchedGifs';
+import { Pagination } from '../ui/Pagination';
+import { fetchTrendingTopic } from '../../helpers/fetch';
 
 
-export const FavsScreen = () => {
-    
-    const {data: gifs, loading} = useFavsGifs();
+export const  FavScreen = () => {
+    const topic = fetchTrendingTopic().then(async(res) => {return await res});
+    const [page, setPage] = useState(1);   
 
+    console.log(topic);
     return (
         <>
             <Navbar />
-            <FavsGrid />
-            <Footer />
+            <Pagination page={page} setPage={ setPage } /> 
+            <GifGrid key={ topic } topic={ topic } page={page}/>
+            <Footer />  
         </>
     )
 }
 
-
-export default FavsScreen;
+export default FavScreen;

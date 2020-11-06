@@ -33,9 +33,9 @@ export const fetchWToken = ( endpoint, data, method = 'GET') => {
   }
 }
 
-export const fetchImages = async( data ) => {
+export const fetchImages = async(topic, limit, offset) => {
 
-  const url = `${ baseUrl}/img?topic=${data}`;
+  const url = `${ baseUrl}/img?topic=${topic}&limit=${limit}&offset=${offset}`;
   const res = await fetch(url);
 
   return res.json().then (res => res.results);
@@ -47,5 +47,6 @@ export const fetchTrendingTopic = async( ) => {
   const url = `${ baseUrl}/img/favs`;
   const res = await fetch(url);
 
-  return res.json().then (res => res.results);
+  return await res.json().then (res => res.topic);
 }
+

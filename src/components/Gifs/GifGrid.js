@@ -2,9 +2,10 @@ import React from 'react';
 import { GifGridItem } from './GifGridItem';
 import { useFetchedGifs } from '../../hooks/useFetchedGifs';
 
-export const GifGrid = ({ topic }) => {
+export const GifGrid = ( {topic, page}) => {
 
-    const {data: gifs, loading} = useFetchedGifs(topic);
+    const {data: gifs, loading} = useFetchedGifs(topic, page);
+
 
     return (
         <>
@@ -18,9 +19,8 @@ export const GifGrid = ({ topic }) => {
                 </div>
             }
 
-
             <div className='text-primary flexbox'>
-                { gifs.map( gif => ( <GifGridItem key = { gif._id } { ...gif } /> ) ) } 
+                { gifs.map( gif => ( <GifGridItem key = { gif.id } { ...gif } /> ) ) } 
             </div>
         </>
     )

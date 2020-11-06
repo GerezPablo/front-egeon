@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { fetchImages, fetchTrendingTopic } from '../helpers/fetch';
 
 
-export const useFetchedGifs = ( topic ) => {
+export const useFetchedGifs = ( topic, page ) => {
     
     const [state, setState] = useState({
         data: [],
@@ -10,14 +10,14 @@ export const useFetchedGifs = ( topic ) => {
     });
 
     useEffect ( () => {
-        fetchImages(topic)
+        fetchImages(topic, 5, page)
         .then( gifs => {
             setState({
                 data: gifs,
                 loading: false
             });
         })
-    }, [topic])
+    }, [topic, page])
 
     return state;
 }
