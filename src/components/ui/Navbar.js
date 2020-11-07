@@ -29,10 +29,6 @@ export const Navbar = () => {
                         <NavLink  className="nav-link" to="/home">Home</NavLink>
                         
                     </li>
-
-                    <li className="nav-item" href="!#">
-                        <NavLink  className="nav-link" to="/favorites">Favorites</NavLink>
-                    </li>
                 </ul>
 
                 <ul className="navbar-nav ml-auto nav-flex-icons">

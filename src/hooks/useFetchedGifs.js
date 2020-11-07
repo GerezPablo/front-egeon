@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchImages, fetchTrendingTopic } from '../helpers/fetch';
+import { fetchImages } from '../helpers/fetch';
 
 
 export const useFetchedGifs = ( topic, page ) => {
@@ -10,7 +10,7 @@ export const useFetchedGifs = ( topic, page ) => {
     });
 
     useEffect ( () => {
-        fetchImages(topic, 5, page)
+        fetchImages(topic, 30, page)
         .then( gifs => {
             setState({
                 data: gifs,
@@ -18,27 +18,6 @@ export const useFetchedGifs = ( topic, page ) => {
             });
         })
     }, [topic, page])
-
-    return state;
-}
-
-
-export const useFavsGifs = ( ) => {
-    
-    const [state, setState] = useState({
-        data: [],
-        loading: true
-    });
-
-    useEffect ( () => {
-        fetchTrendingTopic()
-        .then( gifs => {
-            setState({
-                data: gifs,
-                loading: false
-            });
-        })
-    }, [])
 
     return state;
 }

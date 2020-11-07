@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import { Navbar } from '../ui/Navbar';
 import { SearchBar } from '../ui/SearchBar';
+import { Pagination } from '../ui/Pagination';
 import { GifGrid } from '../Gifs/GifGrid';
 import { Footer } from '../ui/Footer';
-import { Pagination } from '../ui/Pagination';
 
 
 export const  HomeScreen = () => {

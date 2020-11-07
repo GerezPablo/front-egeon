@@ -16,7 +16,6 @@ import { startChecking } from "../actions/auth";
 import LoginScreen from "../components/auth/LoginScreen";
 import RegisterScreen from "../components/auth/RegisterScreen";
 import HomeScreen from "../components/home/HomeScreen";
-import FavsScreen from "../components/home/FavsScreen";
 
 export const AppRouter = () => {
 
@@ -38,7 +37,6 @@ export const AppRouter = () => {
                 
                     {/* Private routes you need an acount */}
                     <PrivateRoute exact path="/home" component={HomeScreen} isAuthenticated={!!uid} />
-                    <PrivateRoute exact path="/favorites" component={FavsScreen} isAuthenticated={!!uid} />
                     
                     <Redirect to= "/home" />
                 </Switch>
