@@ -17,7 +17,7 @@ export const Pagination = ({ page, setPage }) => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [page]);
+    }, [page]);
       
 
     return (

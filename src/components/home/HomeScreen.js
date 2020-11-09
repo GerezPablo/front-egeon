@@ -12,8 +12,8 @@ export const  HomeScreen = () => {
 
     return (
         <>
-        <a name="start"></a>
             <Navbar />
+            
             <SearchBar setTopic={ setTopic } setPage={ setPage } />
             <Pagination page={ page } setPage={ setPage }/> 
             

@@ -27,7 +27,6 @@ export const Navbar = () => {
                     
                     <li className="nav-item" href="!#">
                         <NavLink  className="nav-link" to="/home">Home</NavLink>
-                        
                     </li>
                 </ul>
 

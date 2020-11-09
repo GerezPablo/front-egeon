@@ -5,11 +5,13 @@ import { useFetchedGifs } from '../../hooks/useFetchedGifs';
 export const GifGrid = ( {topic, page}) => {
 
     const {data: gifs, loading} = useFetchedGifs(topic, page);
+
     const spinner = () => {
         return (
-        <div className="purple-lighten-1" style={{display: 'flex', 'justifyContent':'center'}}> 
-            <div className="spinner-border text-primary " style={{"width": "6rem", "height": "6rem"}} role="status"/>
-        </div>)
+            <div className="purple-lighten-1" style={{display: 'flex', 'justifyContent':'center'}}> 
+                <div className="spinner-border text-primary " style={{"width": "6rem", "height": "6rem"}} role="status"/>
+            </div>
+        )
     }
 
     return (

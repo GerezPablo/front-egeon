@@ -25,7 +25,7 @@ export const AppRouter = () => {
 
     useEffect( () => {
         dispatch(startChecking());
-    }, [dispatch])
+    }, [dispatch]);
 
     return (
         <Router>
