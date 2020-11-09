@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 
-export const SearchBar = ({ setTopic }) => {
+export const SearchBar = ({ setTopic, setPage}) => {
 
     const [inputValue, setInputValue] = useState('');
 
@@ -16,6 +16,7 @@ export const SearchBar = ({ setTopic }) => {
             const finalInput = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
             setTopic(finalInput);
             setInputValue('');
+            setPage(1);
         }
     }
 

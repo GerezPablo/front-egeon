@@ -12,10 +12,14 @@ export const  HomeScreen = () => {
 
     return (
         <>
+        <a name="start"></a>
             <Navbar />
-            <SearchBar setTopic={ setTopic } />
-            <Pagination page={page} setPage={ setPage } /> 
-            <GifGrid key={ topic } topic={ topic } page={page}/>
+            <SearchBar setTopic={ setTopic } setPage={ setPage } />
+            <Pagination page={ page } setPage={ setPage }/> 
+            
+            <GifGrid key={ topic } topic={ topic } page={ page }/>
+
+            <Pagination page={ page } setPage={ setPage }/> 
             <Footer /> 
         </>
     )

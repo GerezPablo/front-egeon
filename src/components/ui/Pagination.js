@@ -1,25 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 
-export const Pagination = ({page, setPage}) => {
+export const Pagination = ({ page, setPage }) => {
+ 
 
     const incrementPage = ()  => {
         setPage( ++page );
-        console.log(page);
     }
     
     const decrementPage = ()  => {
         if(page > 1) {
             setPage( --page );
-            console.log(page);
         }
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [page]);
+      
+
     return (
-        <nav aria-label="...">
-            <ul className="pagination">
-                <li className="page-item grey">
+        <nav aria-label="..." style={{'marginLeft':'2vw'}}>
+            <ul className="pagination ">
+                <li className="page-item blue">
                     <a 
                         className="page-link" 
                         onClick={decrementPage}
@@ -27,7 +31,7 @@ export const Pagination = ({page, setPage}) => {
                     Previous</a>
                 </li>
                 
-                <li className="page-item grey">
+                <li className="page-item blue">
                     <a 
                         className="page-link" 
                         onClick={incrementPage}
